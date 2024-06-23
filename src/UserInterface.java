@@ -1,9 +1,11 @@
 import java.util.Scanner;
 
 class UserInterface {
+
     Scanner leitor = new Scanner(System.in);
     Ponei ponei = new Ponei();
 
+    //constante do menu
     final String MENU = """
             \n========== Menu ===========
             1 - Novo pônei
@@ -17,10 +19,11 @@ class UserInterface {
             0 - Sair
             """;
 
+    //Método para exibir o menu principal 
     public int mostrarMenu(Scanner leitor) {
         System.out.println(MENU);
-        int opcao = leitor.nextInt();
+        int opcao = leitor.nextInt();//lê a escolha do usuario
         leitor.nextLine();
-        return opcao;
+        return opcao;//retorna a opção escolhida
     }
 }

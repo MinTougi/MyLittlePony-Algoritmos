@@ -1,4 +1,5 @@
 class Ponei {
+    //definindo os atributos do ponei
     private int id;
     private String nome;
     private String genero;
@@ -9,9 +10,11 @@ class Ponei {
     private String tipo_crina;
     private String tipo_penteado;
 
+    //método construtor padrão
     public Ponei() {
     }
 
+    //método construtor parametrizado
     public Ponei(int id, String nome, String tipo_ponei, String cor_pele, String cor_olhos, String cor_crina, String tipo_crina, String tipo_penteado, String genero) {
         this.id = id;
         this.nome = nome;

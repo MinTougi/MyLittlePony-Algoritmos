@@ -115,6 +115,7 @@ class PoneiService {
 
         for (Ponei ponei : poneis) {
             switch (ponei.getGenero().toLowerCase()) {
+                //incrementos
                 case "masculino" -> masculino++;
                 case "feminino" -> feminino++;
                 case "não binário" -> semGenero++;
@@ -133,22 +134,26 @@ class PoneiService {
         System.out.println("Informe o nome do pônei que deseja excluir:");
         String nome = leitor.nextLine();
     
+        //loop para lidar com a entrada do usuário e possíveis exceções
         do {
             try {
+                //percorre a lista de poneis para encontrar o ponei pelo nome
                 for (Ponei ponei : poneis) {
+                    //se o nome informado estiver na lista, ignorando as maiúsculas e minúsculas
                     if (ponei.getNome().equalsIgnoreCase(nome)) {
-                        poneis.remove(ponei);
+                        poneis.remove(ponei); //remove o ponei da lista
                         System.out.println("Pônei excluído com sucesso!");
-                        return;
+                        return;//retorna ao método chamado depois da exclusão
                     }
                 }
+                //se um ponei não for encontrado
                 System.out.println("Pônei não encontrado. Digite novamente:");
                 nome = leitor.nextLine();
             } catch (InputMismatchException e) {
+                //caso a entrada seja inválida
                 System.out.println("Entrada inválida. Digite o nome do pônei:");
                 leitor.nextLine(); // Limpe a entrada incorreta
             }
-        } while (true);
+        } while (true);//loop continua até que o ponei seja encontrado e excluido
     }
-    
 }
